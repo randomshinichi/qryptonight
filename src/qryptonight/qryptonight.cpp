@@ -79,9 +79,9 @@ std::vector<uint8_t> Qryptonight::hash(const std::vector<uint8_t>& input)
         throw std::invalid_argument("input length should be > 42 bytes");
     }
 
-    cryptonight_hash<cryptonight_monero, false, false>(input.data(), input.size(),
+    Cryptonight_hash<1>::template hash<cryptonight_monero, false, false>(input.data(), input.size(),
                                                        output.data(),
-                                                       _context);
+                                                       &_context);
 
     return output;
 };

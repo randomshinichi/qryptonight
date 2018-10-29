@@ -85,9 +85,9 @@ namespace {
 
         std::vector<uint8_t> output(32);
 
-        cryptonight_hash<cryptonight_monero, false, false>(input.data(), input.size(),
-                                                           output.data(),
-                                                           context);
+        Cryptonight_hash<1>::template hash<cryptonight_monero, false, false>(input.data(), input.size(),
+                                                               output.data(),
+                                                               &context);
 
         cryptonight_free_ctx(context);
 
